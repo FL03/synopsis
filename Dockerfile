@@ -1,6 +1,8 @@
 FROM jo3mccain/poetic
 
-ENV SERVER_PORT=8080
+ENV DB_URI="postgres://postgres:password@localhost:5432/postgres" \
+    DEV_MODE=false \
+    SERVER_PORT=8080
 
 ADD . /project
 WORKDIR /project
