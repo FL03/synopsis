@@ -1,4 +1,5 @@
 # Synopsis
+[![Docker](https://github.com/FL03/synopsis/actions/workflows/docker.yml/badge.svg)](https://github.com/FL03/synopsis/actions/workflows/docker.yml)
 
 ### _Created with FastAPI, PostgreSQL, and Tortoise-ORM_
 
