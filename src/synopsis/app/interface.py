@@ -52,7 +52,7 @@ register_tortoise(
 def run():
     import uvicorn
     uvicorn.run(
-        "app.interface:app",
+        "synopsis.app.interface:app",
         host="0.0.0.0",
         port=session.settings.server_port,
         reload=session.settings.dev_mode
