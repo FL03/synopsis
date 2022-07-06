@@ -6,9 +6,10 @@
         Describe the standard models surrounding users and their data
 """
 
-from synopsis.data.primitives import ModelController as Mc
 from tortoise import Model, fields
 from tortoise.contrib.pydantic import pydantic_model_creator
+
+from synopsis.data.primitives import ModelController as Mc
 
 
 class Accounts(Model):
@@ -64,6 +65,7 @@ class Users(Model):
     id = fields.IntField(pk=True)
     username = fields.CharField(Mc.strings.sm, unique=True)
     password_hash = fields.CharField(Mc.strings.md, null=True)
+    disabled = fields.BooleanField(default=False, null=True)
 
     created = fields.DatetimeField(auto_now_add=True)
     modified = fields.DatetimeField(auto_now=True)
