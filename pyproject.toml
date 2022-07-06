@@ -3,7 +3,7 @@ authors = ["FL03 <jo3mccain@icloud.com>"]
 description = "Synopsis is a complete file management application equipped with a number of unique extraction tools"
 license = "MIT"
 name = "synopsis"
-version = "0.1.0"
+version = "0.1.1"
 
 [build-system]
 requires = ["setuptools>=61.0"]
