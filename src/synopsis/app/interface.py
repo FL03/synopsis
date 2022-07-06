@@ -1,11 +1,11 @@
 import datetime
-import dotenv
+
 from fastapi import FastAPI, responses
 from pydantic import BaseModel
-from tortoise.contrib.fastapi import register_tortoise
 
-from synopsis.core.session import Session
 from synopsis.app.api import index
+from synopsis.core.session import Session
+from synopsis.data.database import dbc
 
 app = FastAPI()
 session: Session = Session()
@@ -39,14 +39,13 @@ async def shutdown():
 
 app.include_router(router=index.router)
 
+db_models = [
+    "synopsis.data.models.items",
+    "synopsis.data.models.tokens",
+    "synopsis.data.models.users"
+]
 
-register_tortoise(
-    app,
-    add_exception_handlers=True,
-    db_url=session.settings.db_uri,
-    generate_schemas=True,
-    modules=dict(models=["synopsis.data.models"])
-)
+dbc(app, db_models, session.settings.db_uri)
 
 
 def run():

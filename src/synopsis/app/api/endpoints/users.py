@@ -1,10 +1,10 @@
-from fastapi import APIRouter, HTTPException
-from tortoise.contrib.fastapi import HTTPNotFoundError
 from typing import List
 
-from synopsis.data.models import User, UserIn, Users
-from synopsis.data.primitives import Status
+from fastapi import APIRouter, HTTPException
+from tortoise.contrib.fastapi import HTTPNotFoundError
 
+from synopsis.data.models.users import User, UserIn, Users
+from synopsis.data.primitives import Status
 
 router: APIRouter = APIRouter(prefix="/users", tags=["users"])
 

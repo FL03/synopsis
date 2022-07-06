@@ -7,7 +7,7 @@ currently being supported with security updates.
 
 | Package  | Current | Supported |
 |----------|---------|-----------|
-| synopsis | 0.1.0   | <=0.1.0   |
+| synopsis | 0.1.1   | 0.1.0     |
 
 ## Reporting a Vulnerability
 Email me at j3mccain@gmail.com or visit me at my 

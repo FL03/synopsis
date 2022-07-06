@@ -1,8 +1,9 @@
 import glob
 import json
 import pathlib
-from pydantic import BaseModel, BaseSettings
 from typing import Any, Dict
+
+from pydantic import BaseModel, BaseSettings
 
 
 def json_config_settings_source(settings: BaseSettings) -> Dict[str, Any]:
@@ -26,6 +27,7 @@ class Server(BaseModel):
 
 
 class Settings(BaseSettings):
+    access_token: str = "some_token"
     db_uri: str
     dev_mode: bool
     server_port: int
